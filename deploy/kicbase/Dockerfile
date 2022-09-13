@@ -222,7 +222,7 @@ RUN systemctl enable docker.service
 # making SSH work for docker container 
 # based on https://github.com/rastasheep/ubuntu-sshd/blob/master/18.04/Dockerfile
 RUN mkdir /var/run/sshd
-RUN echo 'root:root' |chpasswd
+RUN echo 'root:Somethingotherthanrootplease#123' |chpasswd
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
